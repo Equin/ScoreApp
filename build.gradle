@@ -1,0 +1,24 @@
+apply from: 'buildsystem/dependencies.gradle'
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.1'
+    }
+}
+
+allprojects {
+    ext {
+        androidApplicationId = "scoreapp.testtask.com"
+        androidVersionCode = 1
+        androidVersionName = "1.0"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,95 @@
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        google()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = '28.0.3'
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+
+    //Libraries
+    daggerVersion = '2.21'
+    butterKnifeVersion = '10.0.0'
+    recyclerViewVersion = '28.0.0'
+    rxJavaVersion = '2.2.5'
+    rxAndroidVersion = '2.1.0'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    androidAnnotationsVersion = '21.0.3'
+    androidConstraintLayoutVersion = '1.1.2'
+    securePreferencesVersion = '0.1.4'
+    retrofitVersion = '2.5.0'
+    annotationVersion = '16.0.2'
+    progressIndicatorVersion = '1.4.0'
+    tableViewVersion = '0.8.8'
+    guavaVersion = '27.0.1'
+
+    //Testing
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    espressoVersion = '3.0.1'
+    instrumentationTestVersion = '1.0.2'
+
+    //Development
+    leakCanaryVersion = '1.6.3'
+
+    presentationDependencies = [
+            daggerCompiler:          "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:                  "com.google.dagger:dagger:${daggerVersion}",
+            butterKnife:             "com.jakewharton:butterknife:${butterKnifeVersion}",
+            butterKnifeCompiler:     "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+            recyclerView:            "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+            rxJava:                  "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid:               "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            androidConstraintLayout: "com.android.support.constraint:constraint-layout:${androidConstraintLayoutVersion}",
+            progressIndicator:       "com.tuyenmonkey:mkloader:${progressIndicatorVersion}",
+            tableView:                "com.evrencoskun.library:tableview:${tableViewVersion}"
+    ]
+
+    presentationTestDependencies = [
+            espresso:           "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            espressoContrib:    "com.android.support.test.espresso:espresso-contrib:${espressoVersion}",
+            testRules:          "com.android.support.test:rules:${instrumentationTestVersion}",
+            testRunner:         "com.android.support.test:runner:${instrumentationTestVersion}"
+    ]
+
+    domainDependencies = [
+            javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            guava:              "com.google.guava:guava:${guavaVersion}-android"
+    ]
+
+    domainTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            assertj:            "org.assertj:assertj-core:${assertJVersion}"
+    ]
+
+    dataDependencies = [
+            daggerCompiler:       "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger:               "com.google.dagger:dagger:${daggerVersion}",
+            rxJava:               "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid:            "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation:      "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject:          "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations:   "com.android.support:support-annotations:${androidAnnotationsVersion}",
+            gsonConverter:        "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            securePreferences:     "com.scottyab:secure-preferences-lib:${securePreferencesVersion}",
+    ]
+
+    dataTestDependencies = [
+            junit:              "junit:junit:${jUnitVersion}",
+            assertj:            "org.assertj:assertj-core:${assertJVersion}",
+    ]
+
+    developmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+    ]
+}

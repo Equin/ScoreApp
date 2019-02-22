@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">ScoreApp</string>
+
+    <!--/* MainActivity */-->
+    <string name="reset_statistics">RESET STATISTICS</string>
+    <string name="show_statistics">SHOW STATISTICS</string>
+    <string name="add_score">ADD SCORE</string>
+    <string name="add_team">ADD TEAM</string>
+    <string name="button_save">SAVE</string>
+    <string name="should_have_more_teams">You should have more then 1 team</string>
+    <string name="teams_should_be_different">Same team can`t be on both sides</string>
+    <string name="new_team_created">New team created</string>
+    <string name="duplicate_of_team">Team with such name already exists</string>
+    <string name="score_updated">Scores successfully updated</string>
+    <string name="uncatched_error">Something went wrong</string>
+    <string name="shared_reseted">Statistic reseted</string>
+    <string name="shared_not_reseted">Statistic NOT reseted</string>
+
+    <!--/* ScoreTableActivity */-->
+    <string name="score_table_label">SCORE TABLE</string>
+    <string name="statistics_table_label">STATISTICS TABLE</string>
+    <string name="sort_by_label">SORT BY:</string>
+    <string name="team_name_label">TEAM NAME</string>
+
+
+</resources>
