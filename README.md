@@ -24,7 +24,7 @@ The 2nd Screen contains a standard score table, which is generated dynamically a
 
 
 
-## Tech/framework used
+## Libraries and technologies used
 
 - [RxJava 2](https://github.com/ReactiveX/RxJava)
 - [Dagger 2](https://github.com/google/dagger)
