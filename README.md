@@ -12,14 +12,15 @@ The 1st Screen contains 4 buttons: ADD TEAM, ADD SCORE, SHOW STATISTICS, RESET S
  
 The 2nd Screen contains a standard score table, which is generated dynamically and a Statistics table. The statistics table contains: played matches number, wins, scored goals and conceded goals. With the sort button the user can order the teams based on: played matches, wins, scored goals or conceded goals.
 
-## Given tasks
+## Screenshots
 
-![Main screen](/img/main.jpeg?raw=true "Main screen")
-![Add team dialog](/img/add_team.jpeg?raw=true "Add team dialog")
-![Add score dialog](/img/add_score.jpeg?raw=true "Add score dialog")
-![Statistics screen](/img/statistics.jpeg?raw=true "Statistics screen")
 
-<img src="/img/main.jpeg?raw=true" height="400" alt="Main screen"/> <img src="/img/add_team.jpeg?raw=true" height="400" alt="Add team dialog"/> <img src="/img/add_score.jpeg?raw=true" height="400" alt="Add score dialog"/> <img src="/img/statistics.jpeg?raw=true" height="400" alt="Statistics screen"/>
+<div align="center">
+<img src="/img/main.jpeg?raw=true" height="400" alt="Main screen"/> <img src="/img/add_team.jpeg?raw=true" height="400" alt="Add team dialog"/> 
+</div>
+<div align="center">
+ <img src="/img/add_score.jpeg?raw=true" height="400" alt="Add score dialog"/> <img src="/img/statistics.jpeg?raw=true" height="400" alt="Statistics screen"/>
+ </div>
 
 
 
