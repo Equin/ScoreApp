@@ -14,7 +14,7 @@ The 2nd Screen contains a standard score table, which is generated dynamically a
 
 ## Given tasks
 
-![Main screen](/img/main.jpg"Main screen")
+![Main screen](/img/main.jpg "Main screen")
 ![Add team dialog](/img/add_team.jpg?raw=true "Add team dialog")
 ![Add score dialog](/img/add_score.jpg?raw=true "Add score dialog")
 ![Statistics screen](/img/statistics.jpg?raw=true "Statistics screen")
@@ -26,4 +26,7 @@ The 2nd Screen contains a standard score table, which is generated dynamically a
 - [ButterKnife](https://github.com/JakeWharton/butterknife)
 - [TableView](https://github.com/evrencoskun/TableView)
 - [GSON](https://github.com/google/gson)
-- [Espresso](https://developer.android.com/training/testing/espresso/)
+- [Espresso](https://developer.android.com/training/testing/espresso/) 
+- [Clean Architecture approach](https://github.com/android10/Android-CleanArchitecture) 
+
+
