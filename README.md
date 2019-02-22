@@ -16,10 +16,10 @@ The 2nd Screen contains a standard score table, which is generated dynamically a
 
 
 <div align="center">
-<img src="/img/main.jpeg?raw=true" height="400" alt="Main screen"/> <img src="/img/add_team.jpeg?raw=true" height="400" alt="Add team dialog"/> 
+<img src="/img/main.jpeg?raw=true" height="400" alt="Main screen" title="Main screen"/> <img src="/img/add_team.jpeg?raw=true" height="400" alt="Add team dialog" title="Add team dialog"/> 
 </div>
 <div align="center">
- <img src="/img/add_score.jpeg?raw=true" height="400" alt="Add score dialog"/> <img src="/img/statistics.jpeg?raw=true" height="400" alt="Statistics screen"/>
+ <img src="/img/add_score.jpeg?raw=true" height="400" alt="Add score dialog" title="Add score dialog"/> <img src="/img/statistics.jpeg?raw=true" height="400" alt="Statistics screen" title="Statistics screen"/>
  </div>
 
 
