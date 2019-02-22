@@ -14,10 +14,14 @@ The 2nd Screen contains a standard score table, which is generated dynamically a
 
 ## Given tasks
 
-![Main screen](/img/main.jpeg "Main screen")
+![Main screen](/img/main.jpeg?raw=true "Main screen")
 ![Add team dialog](/img/add_team.jpeg?raw=true "Add team dialog")
 ![Add score dialog](/img/add_score.jpeg?raw=true "Add score dialog")
 ![Statistics screen](/img/statistics.jpeg?raw=true "Statistics screen")
+
+<img src="/img/main.jpeg?raw=true" height="400" alt="Main screen"/> <img src="/img/add_team.jpeg?raw=true" height="400" alt="Add team dialog"/> <img src="/img/add_score.jpeg?raw=true" height="400" alt="Add score dialog"/> <img src="/img/statistics.jpeg?raw=true" height="400" alt="Statistics screen"/>
+
+
 
 ## Tech/framework used
 
