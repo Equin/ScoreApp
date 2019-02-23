@@ -36,6 +36,8 @@ public class UiTestsBase {
                 context.getPackageName(),
                 Context.MODE_PRIVATE
         );
+
+        clearSharedPreferences();
     }
 
     @Test
@@ -45,6 +47,10 @@ public class UiTestsBase {
 
     @After
     public void tearDown() throws Exception {
+        clearSharedPreferences();
+    }
+
+    private void clearSharedPreferences() {
         this.sharedPreferencesAccessor.getSharedPreferencesEditor().clear().commit();
         this.sharedPreferences.edit().clear().commit();
     }
