@@ -80,7 +80,7 @@ public class CoreModule {
 
     @Provides
     @PerActivity
-    CustomScoreTable provideCustomScoreTable(Activity activity, Context context) {
-        return new CustomScoreTable(activity, context);
+    CustomScoreTable provideCustomScoreTable(Context context) {
+        return new CustomScoreTable(context);
     }
 }

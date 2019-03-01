@@ -21,12 +21,11 @@ import scoreapp.testtask.com.R;
 
 public class CustomScoreTable {
 
-    private static final int TABLE_RECYCLER_VIEW = 0;
-    private static final int COLUMN_HEADER_RECYCLER_VIEW = 1;
-    private static final int ROW_HEADER_RECYCLER_VIEW = 2;
+    private static final int TABLE_RECYCLER_VIEW_TAG = 0;
+    private static final int COLUMN_HEADER_RECYCLER_VIEW_TAG = 1;
+    private static final int ROW_HEADER_RECYCLER_VIEW_TAG = 2;
     private static final int RECYCLER_VIEWS_COUNT = 3;
 
-    private Activity activity;
     private Context context;
     private View view;
 
@@ -34,8 +33,7 @@ public class CustomScoreTable {
     private int itemsCount;
 
     @Inject
-    public CustomScoreTable(Activity activity, Context context) {
-        this.activity = activity;
+    public CustomScoreTable(Context context) {
         this.context = context;
     }
 
@@ -50,12 +48,13 @@ public class CustomScoreTable {
     }
 
     private void createContentRecyclerView(List<Team> teams) {
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(this.context,RecyclerView.HORIZONTAL, false);
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(
+                this.context,RecyclerView.HORIZONTAL, false);
 
-        RecyclerView recyclerViewTableContent = this.activity.findViewById(R.id.recyclerView_table_content);
+        RecyclerView recyclerViewTableContent = this.view.findViewById(R.id.recyclerView_table_content);
         recyclerViewTableContent.setHasFixedSize(true);
         recyclerViewTableContent.setLayoutManager(manager);
-        recyclerViewTableContent.setTag(TABLE_RECYCLER_VIEW);
+        recyclerViewTableContent.setTag(TABLE_RECYCLER_VIEW_TAG);
         recyclerViewTableContent.addOnScrollListener(this.recyclerViewScrollListener);
         recyclerViewTableContent.addOnItemTouchListener(this.recyclerViewTouchListener);
 
@@ -65,12 +64,13 @@ public class CustomScoreTable {
     }
 
     private void createRowHeaderRecyclerView(List<Team> teams) {
-        RecyclerView.LayoutManager rowLayoutManager = new LinearLayoutManager(this.context, LinearLayout.HORIZONTAL, false);
+        RecyclerView.LayoutManager rowLayoutManager = new LinearLayoutManager(
+                this.context, LinearLayout.HORIZONTAL, false);
 
-        RecyclerView rowHeaderRecycleView = this.activity.findViewById(R.id.recyclerView_row_header);
+        RecyclerView rowHeaderRecycleView = this.view.findViewById(R.id.recyclerView_row_header);
         rowHeaderRecycleView.setHasFixedSize(true);
         rowHeaderRecycleView.setLayoutManager(rowLayoutManager);
-        rowHeaderRecycleView.setTag(ROW_HEADER_RECYCLER_VIEW);
+        rowHeaderRecycleView.setTag(ROW_HEADER_RECYCLER_VIEW_TAG);
         rowHeaderRecycleView.addOnScrollListener(this.recyclerViewScrollListener);
         rowHeaderRecycleView.addOnItemTouchListener(this.recyclerViewTouchListener);
 
@@ -81,10 +81,10 @@ public class CustomScoreTable {
     private void createColumnHeaderRecyclerView(List<Team> teams) {
         RecyclerView.LayoutManager columnHeaderLayoutManager = new LinearLayoutManager(this.context);
 
-        RecyclerView columnHeaderRecycleView = this.activity.findViewById(R.id.recyclerView_column_header);
+        RecyclerView columnHeaderRecycleView = this.view.findViewById(R.id.recyclerView_column_header);
         columnHeaderRecycleView.setHasFixedSize(true);
         columnHeaderRecycleView.setLayoutManager(columnHeaderLayoutManager);
-        columnHeaderRecycleView.setTag(COLUMN_HEADER_RECYCLER_VIEW);
+        columnHeaderRecycleView.setTag(COLUMN_HEADER_RECYCLER_VIEW_TAG);
         columnHeaderRecycleView.addOnScrollListener(this.recyclerViewScrollListener);
         columnHeaderRecycleView.addOnItemTouchListener(this.recyclerViewTouchListener);
 
@@ -101,10 +101,10 @@ public class CustomScoreTable {
         @Override
         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
-            if ((int) recyclerView.getTag() == touchedRecyclerViewTag) {
+            if ((int) recyclerView.getTag() == CustomScoreTable.this.touchedRecyclerViewTag) {
                 for (int recyclerViewTag = 0; recyclerViewTag < itemsCount + RECYCLER_VIEWS_COUNT; recyclerViewTag++) {
                     if (recyclerViewTag != (int) recyclerView.getTag()) {
-                        RecyclerView tempRecyclerView = (RecyclerView) view.findViewWithTag(recyclerViewTag);
+                        RecyclerView tempRecyclerView = CustomScoreTable.this.view.findViewWithTag(recyclerViewTag);
                         if(tempRecyclerView != null)
                             tempRecyclerView.scrollBy(dx, dy);
                     }
@@ -121,7 +121,7 @@ public class CustomScoreTable {
     private RecyclerView.OnItemTouchListener recyclerViewTouchListener = new RecyclerView.OnItemTouchListener() {
         @Override
         public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent event) {
-            touchedRecyclerViewTag = (int) recyclerView.getTag();
+            CustomScoreTable.this.touchedRecyclerViewTag = (int) recyclerView.getTag();
             return false;
         }
 
