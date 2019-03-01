@@ -12,6 +12,11 @@ import scoreapp.testtask.com.presentation.constant.HeaderTitle;
 
 public class TableViewModel {
 
+    private static final String WINNER_TEAM_HM_KEY = "W";
+    private static final String GAMES_PLAYED_HM_KEY = "M";
+    private static final String SCORED_GOALS_HM_KEY = "SG";
+    private static final String CONCEDED_GOALS_HM_KEY = "CG";
+
     private List<Team> tableData;
     private List<StatisticItemModel> winnerTeams;
     private List<StatisticItemModel> gamesPlayed;
@@ -20,10 +25,10 @@ public class TableViewModel {
     private int rowSize;
 
     public TableViewModel() {
-        winnerTeams = new ArrayList<>();
-        gamesPlayed = new ArrayList<>();
-        scoredGoals = new ArrayList<>();
-        concededGoals = new ArrayList<>();
+        this.winnerTeams = new ArrayList<>();
+        this.gamesPlayed = new ArrayList<>();
+        this.scoredGoals = new ArrayList<>();
+        this.concededGoals = new ArrayList<>();
     }
 
     private HashMap<String,List<StatisticItemModel>> getStatisticsModel() {
@@ -32,11 +37,11 @@ public class TableViewModel {
 
         createStatisticItemModels();
 
-        for(int upperTeam = 0; upperTeam < tableData.size(); upperTeam++) {
-            String upperTeamName = tableData.get(upperTeam).getTeamName();
+        for(int upperTeam = 0; upperTeam < this.tableData.size(); upperTeam++) {
+            String upperTeamName =  this.tableData.get(upperTeam).getTeamName();
 
-            for (int teams = 0; teams < tableData.size(); teams++) {
-                List<OppositeTeam> OppositeTeams = tableData.get(teams).getOppositeTeamList();
+            for (int teams = 0; teams <  this.tableData.size(); teams++) {
+                List<OppositeTeam> OppositeTeams =  this.tableData.get(teams).getOppositeTeamList();
 
                 for (int opTeams = 0; opTeams < OppositeTeams.size(); opTeams++) {
                     OppositeTeam OppositeTeam = OppositeTeams.get(opTeams);
@@ -48,20 +53,20 @@ public class TableViewModel {
             }
         }
 
-        cellsHashMapList.put("W", winnerTeams);
-        cellsHashMapList.put("M", gamesPlayed);
-        cellsHashMapList.put("SG", scoredGoals);
-        cellsHashMapList.put("CG", concededGoals);
+        cellsHashMapList.put(WINNER_TEAM_HM_KEY, this.winnerTeams);
+        cellsHashMapList.put(GAMES_PLAYED_HM_KEY, this.gamesPlayed);
+        cellsHashMapList.put(SCORED_GOALS_HM_KEY, this.scoredGoals);
+        cellsHashMapList.put(CONCEDED_GOALS_HM_KEY, this.concededGoals);
 
         return cellsHashMapList;
     }
 
     private void createStatisticItemModels() {
-        for(int i = 0; i < tableData.size(); i++) {
-            winnerTeams.add(new StatisticItemModelImpl(tableData.get(i).getTeamName()));
-            gamesPlayed.add(new StatisticItemModelImpl(tableData.get(i).getTeamName()));
-            scoredGoals.add(new StatisticItemModelImpl(tableData.get(i).getTeamName()));
-            concededGoals.add(new StatisticItemModelImpl(tableData.get(i).getTeamName()));
+        for(int i = 0; i < this.tableData.size(); i++) {
+            this.winnerTeams.add(new StatisticItemModelImpl(this.tableData.get(i).getTeamName()));
+            this.gamesPlayed.add(new StatisticItemModelImpl(this.tableData.get(i).getTeamName()));
+            this.scoredGoals.add(new StatisticItemModelImpl(this.tableData.get(i).getTeamName()));
+            this.concededGoals.add(new StatisticItemModelImpl(this.tableData.get(i).getTeamName()));
         }
     }
 
@@ -72,9 +77,9 @@ public class TableViewModel {
     private void calculateWinsCount(OppositeTeam OppositeTeam, String upperTeamName, int upperTeam, int team) {
         if (upperTeamName.equals(OppositeTeam.getTeamName())) {
             if (OppositeTeam.isWinner()) {
-                winnerTeams.get(upperTeam).incrementValue();
+                this.winnerTeams.get(upperTeam).incrementValue();
             } else if (!OppositeTeam.isDraw()) {
-                winnerTeams.get(team).incrementValue();
+                this.winnerTeams.get(team).incrementValue();
             }
         }
     }
@@ -85,9 +90,9 @@ public class TableViewModel {
      */
     private void calculatePlayedGames(OppositeTeam OppositeTeam, String upperTeamName, int upperTeam, int team) {
         if (upperTeamName.equals(OppositeTeam.getTeamName())) {
-            gamesPlayed.get(upperTeam).incrementValue();
-        } else if(tableData.get(team).getTeamName().equals(upperTeamName)){
-            gamesPlayed.get(team).incrementValue();
+            this.gamesPlayed.get(upperTeam).incrementValue();
+        } else if(this.tableData.get(team).getTeamName().equals(upperTeamName)){
+            this.gamesPlayed.get(team).incrementValue();
         }
     }
 
@@ -97,11 +102,11 @@ public class TableViewModel {
      */
     private void calculateGoals(OppositeTeam OppositeTeam, String upperTeamName, int upperTeam, int teamIndex) {
         if (upperTeamName.equals(OppositeTeam.getTeamName())) {
-            scoredGoals.get(upperTeam).addToValue(OppositeTeam.getScoredGoals());
-            concededGoals.get(upperTeam).addToValue(OppositeTeam.getConcededGoals());
+            this.scoredGoals.get(upperTeam).addToValue(OppositeTeam.getScoredGoals());
+            this.concededGoals.get(upperTeam).addToValue(OppositeTeam.getConcededGoals());
         } else if (tableData.get(teamIndex).getTeamName().equals(upperTeamName)) {
-            scoredGoals.get(teamIndex).addToValue(OppositeTeam.getConcededGoals());
-            concededGoals.get(teamIndex).addToValue(OppositeTeam.getScoredGoals());
+            this.scoredGoals.get(teamIndex).addToValue(OppositeTeam.getConcededGoals());
+            this.concededGoals.get(teamIndex).addToValue(OppositeTeam.getScoredGoals());
         }
     }
 
