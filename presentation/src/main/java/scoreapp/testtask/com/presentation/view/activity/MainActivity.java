@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity
     private void initializeInjector() {
         this.coreComponent = DaggerCoreComponent.builder()
                 .applicationComponent(getApplicationComponent())
-                .activityModule(new ActivityModule(this))
+                .activityModule(getActivityModule())
                 .coreModule(new CoreModule())
                 .build();
     }
