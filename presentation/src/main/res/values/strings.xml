@@ -15,12 +15,12 @@
     <string name="uncatched_error">Something went wrong</string>
     <string name="shared_reseted">Statistic reseted</string>
     <string name="shared_not_reseted">Statistic NOT reseted</string>
+    <string name="goals_divider">-</string>
 
     <!--/* ScoreTableActivity */-->
     <string name="score_table_label">SCORE TABLE</string>
     <string name="statistics_table_label">STATISTICS TABLE</string>
     <string name="sort_by_label">SORT BY:</string>
     <string name="team_name_label">TEAM NAME</string>
-
 
 </resources>

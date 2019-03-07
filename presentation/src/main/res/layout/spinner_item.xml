@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/spiner_item_devider">
+    android:background="@drawable/spinner_item_divider">
 
     <TextView
         android:id="@+id/textView_spiner_item_value"

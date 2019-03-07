@@ -9,3 +9,6 @@
 /build
 /captures
 .externalNativeBuild
+presentation/release/presentation-release.apk
+presentation/key.jks
+presentation/release/output.json
