@@ -69,12 +69,12 @@
             android:layout_marginEnd="8dp"
             android:layout_toStartOf="@+id/spinner_second_team"
             android:layout_toEndOf="@+id/spinner_first_team"
-            android:text="-"
+            android:text="@string/goals_divider"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="24sp"
             android:visibility="visible"
-            tools:text="-" />
+            tools:text="@string/goals_divider" />
 
         <TextView
             android:id="@+id/textView2"
@@ -86,11 +86,11 @@
             android:layout_marginEnd="8dp"
             android:layout_toStartOf="@+id/editText_score_second_team"
             android:layout_toEndOf="@+id/editText_score_first_team"
-            android:text="-"
+            android:text="@string/goals_divider"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="24sp"
-            tools:text="-" />
+            tools:text="@string/goals_divider"/>
 
     </RelativeLayout>
 
